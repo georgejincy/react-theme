@@ -1,7 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -34,3 +33,8 @@ CSS: Bootstrap css cdn
 react-bootsstrap
 redux
 react-redux
+
+### References
+React boilerplate - https://github.com/react-boilerplate/react-boilerplate
+Authorization - https://hackernoon.com/role-based-authorization-in-react-c70bb7641db4
+React-admin-template - https://github.com/coreui/coreui-free-react-admin-template
