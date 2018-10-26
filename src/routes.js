@@ -40,8 +40,12 @@ const routes = [
     name: 'Career',
     component: School1CollegeCredit
   },
-  { path: '/school1/dashboard', name: 'Career', component: School1Dashboard },
-  { path: '/school1/parents', name: 'Career', component: School1Parents },
+  {
+    path: '/school1/dashboard',
+    name: 'Dashboard',
+    component: School1Dashboard
+  },
+  { path: '/school1/parents', name: 'Parents', component: School1Parents },
   {
     path: '/school2/students/career-preparation',
     name: 'Career',
@@ -52,8 +56,12 @@ const routes = [
     name: 'Career',
     component: School2CollegeCredit
   },
-  { path: '/school2/dashboard', name: 'Career', component: School2Dashboard },
-  { path: '/school2/parents', name: 'Career', component: School2Parents },
+  {
+    path: '/school2/dashboard',
+    name: 'Dashboard',
+    component: School2Dashboard
+  },
+  { path: '/school2/parents', name: 'Parents', component: School2Parents },
   {
     path: '/school3/students/career-preparation',
     name: 'Career',
@@ -64,8 +72,12 @@ const routes = [
     name: 'Career',
     component: School3CollegeCredit
   },
-  { path: '/school3/dashboard', name: 'Career', component: School3Dashboard },
-  { path: '/school3/parents', name: 'Career', component: School3Parents }
+  {
+    path: '/school3/dashboard',
+    name: 'Dashboard',
+    component: School3Dashboard
+  },
+  { path: '/school3/parents', name: 'Parents', component: School3Parents }
 ]
 
 export default routes
