@@ -38,3 +38,5 @@ react-redux
 React boilerplate - https://github.com/react-boilerplate/react-boilerplate
 Authorization - https://hackernoon.com/role-based-authorization-in-react-c70bb7641db4
 React-admin-template - https://github.com/coreui/coreui-free-react-admin-template
+HTML5 Boilerplate's CSS - https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/css.md
+Code splitting - https://hackernoon.com/effective-code-splitting-in-react-a-practical-guide-2195359d5d49
