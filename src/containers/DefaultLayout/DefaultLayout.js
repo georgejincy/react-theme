@@ -1,20 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { Grid } from 'react-bootstrap'
 
 import {
   AppHeader,
+  AppBreadcrumb,
   AppSidebar,
   AppSidebarFooter,
   AppSidebarForm,
   AppSidebarHeader,
   AppSidebarMinimizer,
-  AppSidebarNav
+  AppSidebarNav,
+  AppAside
 } from '@coreui/react'
 
 import navigation from './nav'
+import DefaultAside from './DefaultAside'
 import DefaultHeader from './DefaultHeader'
 import routes from '../../routes'
 
@@ -51,6 +54,7 @@ class DefaultLayout extends Component {
           </AppSidebar>
           {/* Main */}
           <main className='main'>
+            <AppBreadcrumb appRoutes={routes} />
             <Grid fluid>
               <Switch>
                 {routes.map((route, idx) => {
@@ -64,9 +68,13 @@ class DefaultLayout extends Component {
                     />
                   ) : null
                 })}
+                <Redirect from='/' to='/dashboard' />
               </Switch>
             </Grid>
           </main>
+          <AppAside fixed>
+            <DefaultAside />
+          </AppAside>
         </div>
       </div>
     )

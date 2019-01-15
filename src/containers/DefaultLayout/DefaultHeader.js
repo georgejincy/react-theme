@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router'
-import { AppSidebarToggler, AppNavbarBrand } from '@coreui/react'
+import {
+  AppSidebarToggler,
+  // AppNavbarBrand,
+  AppAsideToggler
+} from '@coreui/react'
 import { Nav, NavItem } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { schoolSelectOperations } from '../../state/ducks/shared/school-select'
-import logo from '../../assets/img/favicon.ico'
+// import logo from '../../assets/img/favicon.ico'
 
 class DefaultHeader extends Component {
   constructor (props) {
@@ -17,6 +21,20 @@ class DefaultHeader extends Component {
 
     this._handleChange = this._handleChange.bind(this)
     this._redirectPage = this._redirectPage.bind(this)
+  }
+
+  componentDidMount () {
+    // get current Location from props, match currentLocation to school property
+    let currentLocation = this.props.location.pathname
+    let parts = currentLocation.split('/')
+    let currSchool = parts.length > 1 ? parts[1] : ''
+    let school = 0
+    if (currSchool && currSchool.startsWith('school')) {
+      school = parseInt(currSchool.substring(currSchool.length - 1), 10)
+    }
+    if (school !== this.props.schoolName) {
+      this.props.setSchool(school)
+    }
   }
 
   _handleChange (e) {
@@ -53,7 +71,7 @@ class DefaultHeader extends Component {
     return (
       <React.Fragment>
         <AppSidebarToggler className='d-lg-none' display='md' mobile />
-        <AppNavbarBrand
+        {/* <AppNavbarBrand
           full={{ src: logo, width: 30, height: 25, alt: 'Ringleader Logo' }}
           minimized={{
             src: logo,
@@ -61,9 +79,9 @@ class DefaultHeader extends Component {
             height: 30,
             alt: 'Ringleader Logo'
           }}
-        />
+        /> */}
         <AppSidebarToggler className='d-md-down-none' display='lg' />
-        <Nav className='ml-auto' navbar>
+        <Nav navbar>
           <NavItem className='px-3'>
             <label htmlFor='school'>School:</label>
             <select
@@ -80,10 +98,8 @@ class DefaultHeader extends Component {
               <option value={3}>School-3</option>
             </select>{' '}
           </NavItem>
-          <NavItem className='px-3'>Dashboard</NavItem>
-          <NavItem className='px-3'>Users</NavItem>
-          <NavItem className='px-3'>Settings</NavItem>
         </Nav>
+        <AppAsideToggler className='d-md-down-none' />
       </React.Fragment>
     )
   }
