@@ -26,24 +26,24 @@ const nav1 = {
     {
       name: 'Students',
       url: '/students',
-      icon: 'icon-puzzle',
+      icon: 'cui-puzzle',
       children: [
         {
           name: 'Career Preparation',
           url: '/school1/students/career-preparation',
-          icon: 'icon-pencil'
+          icon: 'cui-pencil'
         },
         {
           name: 'College Credit',
           url: '/school1/students/college-credit',
-          icon: 'icon-pencil'
+          icon: 'cui-pencil'
         }
       ]
     },
     {
       name: 'Parents',
       url: '/school1/parents',
-      icon: 'icon-pencil'
+      icon: 'cui-pencil'
     }
   ]
 }
@@ -62,24 +62,24 @@ const nav2 = {
     {
       name: 'Students',
       url: '/students',
-      icon: 'icon-puzzle',
+      icon: 'cui-puzzle',
       children: [
         {
           name: 'Career Preparation',
           url: '/school2/students/career-preparation',
-          icon: 'icon-pencil'
+          icon: 'cui-pencil'
         },
         {
           name: 'College Credit',
           url: '/school2/students/college-credit',
-          icon: 'icon-pencil'
+          icon: 'cui-pencil'
         }
       ]
     },
     {
       name: 'Parents',
       url: '/school2/parents',
-      icon: 'icon-pencil'
+      icon: 'cui-pencil'
     }
   ]
 }
@@ -98,24 +98,24 @@ const nav3 = {
     {
       name: 'Students',
       url: '/students',
-      icon: 'icon-puzzle',
+      icon: 'cui-puzzle',
       children: [
         {
           name: 'Career Preparation',
           url: '/school3/students/career-preparation',
-          icon: 'icon-pencil'
+          icon: 'cui-pencil'
         },
         {
           name: 'College Credit',
           url: '/school3/students/college-credit',
-          icon: 'icon-pencil'
+          icon: 'cui-pencil'
         }
       ]
     },
     {
       name: 'Parents',
       url: '/school3/parents',
-      icon: 'icon-pencil'
+      icon: 'cui-pencil'
     }
   ]
 }

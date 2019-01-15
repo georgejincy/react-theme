@@ -6,7 +6,6 @@
     "@coreui/react": "^2.0.5",
     "prop-types": "^15.6.2",
     "react": "^16.4.0",
-    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.0",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4"

@@ -31,6 +31,23 @@ const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   {
+    path: '/school1',
+    name: 'School 1',
+    exact: true,
+    component: School1Dashboard
+  },
+  {
+    path: '/school1/dashboard',
+    name: 'Dashboard',
+    component: School1Dashboard
+  },
+  {
+    path: '/school1/students',
+    name: 'Students',
+    exact: true,
+    component: School1Career
+  },
+  {
     path: '/school1/students/career-preparation',
     name: 'Career',
     component: School1Career
@@ -40,12 +57,18 @@ const routes = [
     name: 'Career',
     component: School1CollegeCredit
   },
-  {
-    path: '/school1/dashboard',
-    name: 'Dashboard',
-    component: School1Dashboard
-  },
   { path: '/school1/parents', name: 'Parents', component: School1Parents },
+  {
+    path: '/school2',
+    name: 'School 2',
+    exact: true,
+    component: School2Dashboard
+  },
+  {
+    path: '/school2/dashboard',
+    name: 'Dashboard',
+    component: School2Dashboard
+  },
   {
     path: '/school2/students/career-preparation',
     name: 'Career',
@@ -56,12 +79,18 @@ const routes = [
     name: 'Career',
     component: School2CollegeCredit
   },
-  {
-    path: '/school2/dashboard',
-    name: 'Dashboard',
-    component: School2Dashboard
-  },
   { path: '/school2/parents', name: 'Parents', component: School2Parents },
+  {
+    path: '/school3',
+    name: 'School 3',
+    exact: true,
+    component: School3Dashboard
+  },
+  {
+    path: '/school3/dashboard',
+    name: 'Dashboard',
+    component: School3Dashboard
+  },
   {
     path: '/school3/students/career-preparation',
     name: 'Career',
@@ -71,11 +100,6 @@ const routes = [
     path: '/school3/students/college-credit',
     name: 'Career',
     component: School3CollegeCredit
-  },
-  {
-    path: '/school3/dashboard',
-    name: 'Dashboard',
-    component: School3Dashboard
   },
   { path: '/school3/parents', name: 'Parents', component: School3Parents }
 ]

@@ -1,0 +1,38 @@
+# Configuration file for /sbin/dhclient, which is included in Debian's
+#       dhcp3-client package.
+#
+# This is a sample configuration file for dhclient. See dhclient.conf's
+#       man page for more information about the syntax of this file
+#       and a more comprehensive list of the parameters understood by
+#       dhclient.
+#
+# Normally, if the DHCP server provides reasonable information and does
+#       not leave anything out (like the domain name, for example), then
+#       few changes must be made to this file, if any.
+#
+# This file managed by Puppet. Do not edit directly #
+option rfc3442-classless-static-routes code 121 = array of unsigned integer 8;
+timeout 30;
+retry 30;
+# reboot 6;
+# initial-interval 2;
+# link-timeout 10;
+# select-timeout 3;
+# backoff-cutoff 2;
+
+interface "eth0"
+{
+ # WMAPM01 = 0:57:4d:41:50:4d:30:31
+  send dhcp-client-identifier 0:57:4d:41:50:4d:30:32;
+   send dhcp-lease-time 1800;
+    request subnet-mask, broadcast-address, routers,
+            domain-name, domain-name-servers, domain-search, ntp-servers;
+	     #require routers, subnet-mask, domain-name-servers;
+	      #prepend domain-name-servers 127.0.0.1;
+	       #send host-name = gethostname();
+	        supersede host-name = gethostname();
+		}
+		script "/sbin/dhclient-script";
+
+		#media "-link0 -link1 -link2", "link0 link1";
+
