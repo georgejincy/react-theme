@@ -6,7 +6,7 @@ import {
   // AppNavbarBrand,
   AppAsideToggler
 } from '@coreui/react'
-import { Nav, NavItem } from 'react-bootstrap'
+import { Nav, NavItem } from 'reactstrap'
 import PropTypes from 'prop-types'
 import { schoolSelectOperations } from '../../state/ducks/shared/school-select'
 // import logo from '../../assets/img/favicon.ico'
