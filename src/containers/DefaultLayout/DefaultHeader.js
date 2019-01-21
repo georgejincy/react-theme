@@ -21,20 +21,11 @@ class DefaultHeader extends Component {
 
     this._handleChange = this._handleChange.bind(this)
     this._redirectPage = this._redirectPage.bind(this)
+    this._syncSchool = this._syncSchool.bind(this)
   }
 
   componentDidMount () {
-    // get current Location from props, match currentLocation to school property
-    let currentLocation = this.props.location.pathname
-    let parts = currentLocation.split('/')
-    let currSchool = parts.length > 1 ? parts[1] : ''
-    let school = 0
-    if (currSchool && currSchool.startsWith('school')) {
-      school = parseInt(currSchool.substring(currSchool.length - 1), 10)
-    }
-    if (school !== this.props.schoolName) {
-      this.props.setSchool(school)
-    }
+    this._syncSchool()
   }
 
   _handleChange (e) {
@@ -65,9 +56,25 @@ class DefaultHeader extends Component {
     }
   }
 
+  _syncSchool () {
+    // get current Location from props, match currentLocation to school property
+    let currentLocation = this.props.location.pathname
+    let parts = currentLocation.split('/')
+    let currSchool = parts.length > 1 ? parts[1] : ''
+    let school = 0
+    console.log('current school-->' + currSchool)
+    if (currSchool && currSchool.startsWith('school')) {
+      school = parseInt(currSchool.substring(currSchool.length - 1), 10)
+    }
+    if (school !== this.props.schoolName) {
+      this.props.setSchool(school)
+    }
+  }
+
   render () {
     console.log(this.props)
     console.log('YOU are at ' + this.props.location.pathname)
+    this._syncSchool()
     return (
       <React.Fragment>
         <AppSidebarToggler className='d-lg-none' display='md' mobile />
